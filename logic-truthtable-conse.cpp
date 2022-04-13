@@ -573,6 +573,8 @@ std::string corrigirStr(std::string formula, bool printResult = false)
     std::vector< std::pair<int, int> > negativeIndexes;
     for(auto& i : parentIndexes)
     {
+        if(i.first-1 == -1){ continue; }
+
         if(formulaEnc[i.first-1] == '-')
         {
             negativeIndexes.push_back(i);
